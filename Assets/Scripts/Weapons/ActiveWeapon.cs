@@ -5,21 +5,25 @@ using UnityEngine;
 public class ActiveWeapon : MonoBehaviour
 {
     public static ActiveWeapon Instance { get; private set; }
-    [SerializeField] private Pistol _pistol;
+    [SerializeField] private MonoBehaviour _currentActiveWeapon;
 
     private void Awake()
     {
         Instance = this;
+    }
+    public void Attack()
+    {
+        (_currentActiveWeapon as IWeapon).Attack();
     }
     // private void Update()
     // {
     //     FollowMousePosition();
     // }
 
-    public Pistol GetActiveWeapon()
-    {
-        return _pistol;
-    }
+    // public Pistol GetActiveWeapon()
+    // {
+    //     return _pistol;
+    // }
 
     // public void FollowMousePosition()
     // {

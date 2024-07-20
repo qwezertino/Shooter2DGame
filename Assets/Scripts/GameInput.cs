@@ -31,16 +31,14 @@ public class GameInput : MonoBehaviour
         Vector2 movementVector = _playerInputActions.Player.Move.ReadValue<Vector2>();
         return movementVector;
     }
-
-    // get mouse position
     public Vector3 GetMousePosition()
     {
         Vector3 mousePos = Mouse.current.position.ReadValue();
         return mousePos;
     }
-    public Vector2 GetMouseWorldPosition()
+    public Vector3 GetMouseWorldPosition()
     {
-        Vector2 mousePos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector3 mousePos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         return mousePos;
     }
 }

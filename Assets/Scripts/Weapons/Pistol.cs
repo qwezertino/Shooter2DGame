@@ -4,36 +4,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Pistol : MonoBehaviour
+public class Pistol : MonoBehaviour, IWeapon
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private GameObject _muzzleFlash;
+    [SerializeField] private float _fireRate;
+    private bool _canFire = true;
+
+    public event EventHandler OnPistolShot;
     private void Start()
     {
         _lineRenderer.useWorldSpace = true;
         _lineRenderer.enabled = false;
+        _muzzleFlash.SetActive(false);
     }
     public void Attack()
     {
-        StartCoroutine(CoroutineAttack());
+        StartCoroutine(AttackCDRoutine());
     }
-    public IEnumerator CoroutineAttack()
+    private IEnumerator AttackCDRoutine()
     {
-         _lineRenderer.positionCount = 2;
-        // RaycastHit2D _hitInfo = Physics2D.Raycast(_firePoint.position, _firePoint.right);
-        // if (_hitInfo)
-        // {
-        //     Debug.Log(_hitInfo.transform.name);
-        //     _lineRenderer.SetPosition(0, _firePoint.position);
-        //     _lineRenderer.SetPosition(1, _hitInfo.point);
-        // }
-        // else
-        // {
+        if (_canFire)
+        {
+            _canFire = false;
+            OnPistolShot?.Invoke(this, EventArgs.Empty);
+            StartCoroutine(CoroutineAttack());
+            yield return new WaitForSeconds(_fireRate);
+            _canFire = true;
+        }
+    }
+    private IEnumerator CoroutineAttack()
+    {
+        _lineRenderer.positionCount = 2;
+        RaycastHit2D _hitInfo = Physics2D.Raycast(_firePoint.position, _firePoint.right);
+        if (_hitInfo)
+        {
+            // Debug.Log(_hitInfo.transform.name);
+            _lineRenderer.SetPosition(0, _firePoint.position);
+            _lineRenderer.SetPosition(1, _hitInfo.point);
+        }
+        else
+        {
             _lineRenderer.SetPosition(0, _firePoint.position);
             _lineRenderer.SetPosition(1, _firePoint.position + _firePoint.right * 100f);
-        // }
+        }
         _lineRenderer.enabled = true;
+        _muzzleFlash.SetActive(true);
         yield return new WaitForSeconds(0.02f);
         _lineRenderer.enabled = false;
+        _muzzleFlash.SetActive(false);
     }
 }

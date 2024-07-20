@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Camera
   - Water
   - UI
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3565898281
+    locked: 0
+  - name: Onground
+    uniqueID: 428101037
     locked: 0
   - name: Collectables
     uniqueID: 1592955493

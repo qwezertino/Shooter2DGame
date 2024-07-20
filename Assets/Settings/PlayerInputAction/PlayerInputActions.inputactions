@@ -100,6 +100,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Hotkeys",
+            "id": "c2bb6228-6408-4aa3-8ed2-b700d5b5fd23",
+            "actions": [
+                {
+                    "name": "Keyboard",
+                    "type": "Button",
+                    "id": "35e9771f-fbff-4b4b-a51b-ef285cf85f75",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b5ca4deb-2bfe-4e9f-9704-3b0327af1274",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "Scale",
+                    "groups": "",
+                    "action": "Keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1410d740-e02e-430f-8056-0f3b2fd8c88b",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "Scale(factor=2)",
+                    "groups": "",
+                    "action": "Keyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
