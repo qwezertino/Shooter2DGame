@@ -10,21 +10,36 @@ public class GameInput : MonoBehaviour
     private PlayerInputActions _playerInputActions;
 
     public event EventHandler OnPlayerAttack;
+    public event EventHandler OnPlayerStopAttack;
 
     [SerializeField] private Camera _camera;
 
     private void Awake()
     {
+        // if (Instance != null)
+        // {
+        //     Destroy(gameObject);
+        //     return;
+        // }
         Instance = this;
+        // DontDestroyOnLoad(gameObject);
 
         _playerInputActions = new PlayerInputActions();
         _playerInputActions.Enable();
-        _playerInputActions.Combat.Attack.started += PlayerAttack_started;
+        // _playerInputActions.Combat.Attack.started += PlayerAttack_started;
+        _playerInputActions.Combat.Attack.performed += PlayerAttack_started;
+        _playerInputActions.Combat.Attack.canceled += PlayerAttack_canceled;
     }
 
     private void PlayerAttack_started(InputAction.CallbackContext obj)
     {
+        Debug.Log("Player attack INVOKED");
         OnPlayerAttack?.Invoke(this, EventArgs.Empty);
+    }
+    private void PlayerAttack_canceled(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Player attack STOPPED");
+        OnPlayerStopAttack?.Invoke(this, EventArgs.Empty);
     }
     public Vector2 GetMovementVector()
     {
@@ -39,6 +54,7 @@ public class GameInput : MonoBehaviour
     public Vector3 GetMouseWorldPosition()
     {
         Vector3 mousePos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        mousePos.z = 0;
         return mousePos;
     }
 }

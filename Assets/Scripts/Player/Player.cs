@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
     {
+        Debug.Log("Player attack called");
         ActiveWeapon.Instance.Attack();
     }
     public Vector3 GetPlayerScreenPosition()

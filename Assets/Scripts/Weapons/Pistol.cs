@@ -15,7 +15,7 @@ public class Pistol : MonoBehaviour, IWeapon
     public event EventHandler OnPistolShot;
     private void Start()
     {
-        _lineRenderer.useWorldSpace = true;
+        // _lineRenderer.useWorldSpace = true;
         _lineRenderer.enabled = false;
         _muzzleFlash.SetActive(false);
     }
@@ -40,7 +40,8 @@ public class Pistol : MonoBehaviour, IWeapon
         RaycastHit2D _hitInfo = Physics2D.Raycast(_firePoint.position, _firePoint.right);
         if (_hitInfo)
         {
-            // Debug.Log(_hitInfo.transform.name);
+
+            Debug.Log(_hitInfo.transform.name);
             _lineRenderer.SetPosition(0, _firePoint.position);
             _lineRenderer.SetPosition(1, _hitInfo.point);
         }
