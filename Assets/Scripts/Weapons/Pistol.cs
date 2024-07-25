@@ -15,7 +15,7 @@ public class Pistol : MonoBehaviour, IWeapon
     public event EventHandler OnPistolShot;
     private void Start()
     {
-        // _lineRenderer.useWorldSpace = true;
+        _lineRenderer.useWorldSpace = true;
         _lineRenderer.enabled = false;
         _muzzleFlash.SetActive(false);
     }
