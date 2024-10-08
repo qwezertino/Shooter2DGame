@@ -4,37 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Pistol : MonoBehaviour, IWeapon
+public class Pistol : BaseWeapon
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private GameObject _muzzleFlash;
-    [SerializeField] private float _fireRate;
-    private bool _canFire = true;
-
-    public event EventHandler OnPistolShot;
     private void Start()
     {
         _lineRenderer.useWorldSpace = true;
         _lineRenderer.enabled = false;
         _muzzleFlash.SetActive(false);
     }
-    public void Attack()
-    {
-        StartCoroutine(AttackCDRoutine());
-    }
-    private IEnumerator AttackCDRoutine()
-    {
-        if (_canFire)
-        {
-            _canFire = false;
-            OnPistolShot?.Invoke(this, EventArgs.Empty);
-            StartCoroutine(CoroutineAttack());
-            yield return new WaitForSeconds(_fireRate);
-            _canFire = true;
-        }
-    }
-    private IEnumerator CoroutineAttack()
+    // public void Attack()
+    // {
+    //     StartCoroutine(AttackCDRoutine());
+    // }
+    // private IEnumerator AttackCDRoutine()
+    // {
+    //     if (_canFire)
+    //     {
+    //         _canFire = false;
+    //         OnPistolShot?.Invoke(this, EventArgs.Empty);
+    //         StartCoroutine(CoroutineAttack());
+    //         yield return new WaitForSeconds(_fireRate);
+    //         _canFire = true;
+    //     }
+    // }
+    protected override IEnumerator CoroutineAttack()
     {
         _lineRenderer.positionCount = 2;
         RaycastHit2D _hitInfo = Physics2D.Raycast(_firePoint.position, _firePoint.right);
