@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActiveWeapon : MonoBehaviour
 {
     public static ActiveWeapon Instance { get; private set; }
-    [SerializeField] private MonoBehaviour _currentActiveWeapon;
+    [SerializeField] private BaseWeapon _currentActiveWeapon;
 
     private void Awake()
     {
@@ -13,7 +13,8 @@ public class ActiveWeapon : MonoBehaviour
     }
     public void Attack()
     {
-        (_currentActiveWeapon as IWeapon).Attack();
+        // (_currentActiveWeapon as IWeapon).Attack();
+        _currentActiveWeapon.Attack();
     }
     // private void Update()
     // {

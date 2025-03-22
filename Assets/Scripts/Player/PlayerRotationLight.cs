@@ -15,8 +15,7 @@ public class PlayerRotationLight : MonoBehaviour
         Vector3 rotation = mousePosition - transform.position;
         float angle = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        fieldOfView.SetAimDirection(angle);
-        fieldOfView.SetOrigin(transform.position);
+        // fieldOfView.SetAimDirection(angle);
+        // fieldOfView.SetOrigin(transform.position);
     }
 }

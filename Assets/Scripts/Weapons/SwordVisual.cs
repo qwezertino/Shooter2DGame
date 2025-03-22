@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolVisual : MonoBehaviour
+public class SwordVisual : MonoBehaviour
 {
-    [SerializeField] private Pistol _pistol;
+    [SerializeField] private Sword _sword;
     private const string ATTACK = "Attack";
     private Animator _animator;
     private void Awake()
@@ -14,10 +14,10 @@ public class PistolVisual : MonoBehaviour
 
     private void Start()
     {
-        _pistol.OnAttack += OnPistolShot;
+        _sword.OnSwing += OnSwing;
     }
 
-    private void OnPistolShot(object sender, System.EventArgs e)
+    private void OnSwing(object sender, System.EventArgs e)
     {
         _animator.SetTrigger(ATTACK);
     }

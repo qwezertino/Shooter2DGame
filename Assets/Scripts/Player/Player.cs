@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ActionGame.Utils;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GameInput.Instance.OnPlayerAttack += GameInput_OnPlayerAttack;
+        // SortingGroup sortingGroup = GetComponent<SortingGroup>();
+        // sortingGroup.sortingOrder = 1;
     }
 
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
