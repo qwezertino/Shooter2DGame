@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void HandleMovement()
     {
-        _rigidbody.MovePosition(_rigidbody.position + inputVector * (_movingSpeed * Time.fixedDeltaTime));
+        _rigidbody.linearVelocity = inputVector * (_movingSpeed * Time.fixedDeltaTime); //(_rigidbody.position + inputVector * (_movingSpeed * Time.fixedDeltaTime));
 
         if (Mathf.Abs(inputVector.x) > _minMovingSpeed || Mathf.Abs(inputVector.y) > _minMovingSpeed)
         {
