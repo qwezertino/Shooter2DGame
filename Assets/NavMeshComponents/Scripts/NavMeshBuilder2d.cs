@@ -25,7 +25,7 @@ namespace NavMeshPlus.Extensions
         public CollectObjects CollectObjects;
         public GameObject parent;
         public bool hideEditorLogs;
-        
+
         protected IEnumerable<GameObject> _root;
         private bool _disposed;
 
@@ -114,7 +114,7 @@ namespace NavMeshPlus.Extensions
                 {
 #if UNITY_EDITOR
                     Object.DestroyImmediate(item.Value);
-#else 
+#else
                     Object.Destroy(item.Value);
 #endif
                 }
@@ -253,8 +253,8 @@ namespace NavMeshPlus.Extensions
         }
 
         public static void CollectSources(List<NavMeshBuildSource> sources, Collider2D collider, int area, NavMeshBuilder2dState builder)
-        { 
-            if (collider.usedByComposite)
+        {
+            if (collider.compositeOperation != Collider2D.CompositeOperation.None)
             {
                 collider = collider.GetComponent<CompositeCollider2D>();
             }
@@ -327,7 +327,7 @@ namespace NavMeshPlus.Extensions
                     if (modifierTilemap && modifierTilemap.TryGetTileModifier(vec3int, tilemap, out NavMeshModifierTilemap.TileModifier tileModifier))
                     {
                         src.area = tileModifier.overrideArea ? tileModifier.area : area;
-                    }    
+                    }
                     sources.Add(src);
 
                     builder.lookupCallback?.Invoke(tilemap.GetInstantiatedObject(vec3int), src);
