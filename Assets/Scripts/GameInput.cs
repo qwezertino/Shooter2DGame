@@ -67,8 +67,16 @@ public class GameInput : MonoBehaviour
     }
     public Vector3 GetMouseWorldPosition()
     {
-        Vector3 mousePos = _camera.ScreenToWorldPoint(GetMousePosition());
-        mousePos.z = 0;
-        return mousePos;
+        Vector3 mousePos = GetMousePosition();
+
+        if (mousePos.x < 0 || mousePos.x > Screen.width ||
+            mousePos.y < 0 || mousePos.y > Screen.height)
+        {
+            return _camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        }
+
+        Vector3 worldPos = _camera.ScreenToWorldPoint(mousePos);
+        worldPos.z = 0;
+        return worldPos;
     }
 }

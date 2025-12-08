@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a2163baddd86924aac9f68cfe6be327, type: 3}
-  m_Name: RifleM4
+  m_Name: RifleAK
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponName: RifleM4
-  attackRate: 0.11
+  weaponName: RifleAK
+  attackRate: 0.13
   fireMode: 1
-  damage: 20
+  damage: 25
   range: 100
   muzzleFlashDuration: 0.02

@@ -227,10 +227,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""085fc9a0-1432-4d33-89b1-63494897cc9c"",
+                    ""id"": ""bb9c11cc-c740-47d2-9bfc-0a2e3d8a0d56"",
                     ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=3)"",
                     ""groups"": """",
                     ""action"": ""Keyboard"",
                     ""isComposite"": false,
