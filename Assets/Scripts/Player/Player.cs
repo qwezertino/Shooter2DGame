@@ -15,14 +15,17 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GameInput.Instance.OnPlayerAttack += GameInput_OnPlayerAttack;
-        // SortingGroup sortingGroup = GetComponent<SortingGroup>();
-        // sortingGroup.sortingOrder = 1;
+        GameInput.Instance.OnPlayerStopAttack += GameInput_OnPlayerStopAttack;
     }
 
     private void GameInput_OnPlayerAttack(object sender, System.EventArgs e)
     {
-        Debug.Log("Player attack called");
-        ActiveWeapon.Instance.Attack();
+        ActiveWeapon.Instance.StartFiring();
+    }
+
+    private void GameInput_OnPlayerStopAttack(object sender, System.EventArgs e)
+    {
+        ActiveWeapon.Instance.StopFiring();
     }
     public Vector3 GetPlayerScreenPosition()
     {

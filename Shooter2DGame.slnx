@@ -33,7 +33,6 @@
   <Project Path="Unity.2D.SpriteShape.Runtime.csproj" />
   <Project Path="Unity.VisualScripting.Core.csproj" />
   <Project Path="Unity.Services.Deployment.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.VisualScripting.State.Editor.csproj" />
   <Project Path="Unity.AI.Navigation.Editor.ConversionSystem.csproj" />
   <Project Path="Unity.Services.Deployment.Core.csproj" />
@@ -65,6 +64,7 @@
   <Project Path="NavMeshPlus.csproj" />
   <Project Path="Unity.Services.Authentication.PlayerAccounts.Editor.csproj" />
   <Project Path="Unity.AI.Navigation.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.2D.PixelPerfect.Editor.csproj" />
   <Project Path="Unity.Services.Multiplayer.Editor.Matchmaker.Authoring.Core.csproj" />
   <Project Path="Unity.Services.Core.Configuration.Editor.csproj" />

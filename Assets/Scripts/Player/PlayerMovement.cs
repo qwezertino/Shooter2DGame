@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
@@ -25,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void HandleMovement()
     {
-        _rigidbody.linearVelocity = inputVector * (_movingSpeed * Time.fixedDeltaTime); //(_rigidbody.position + inputVector * (_movingSpeed * Time.fixedDeltaTime));
+        _rigidbody.linearVelocity = inputVector * _movingSpeed;
 
         if (Mathf.Abs(inputVector.x) > _minMovingSpeed || Mathf.Abs(inputVector.y) > _minMovingSpeed)
         {

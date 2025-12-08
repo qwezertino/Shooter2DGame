@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolVisual : MonoBehaviour
+[RequireComponent(typeof(Animator))]
+public class RaycastWeaponVisual : MonoBehaviour
 {
-    [SerializeField] private Pistol _pistol;
+    [SerializeField] private RaycastWeapon _pistol;
     private const string ATTACK = "Attack";
     private Animator _animator;
     private void Awake()

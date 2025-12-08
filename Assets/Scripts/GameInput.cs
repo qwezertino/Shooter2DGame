@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public class WeaponSlotEventArgs : EventArgs
+{
+    public int SlotIndex { get; set; }
+}
+
 public class GameInput : MonoBehaviour
 {
     public static GameInput Instance { get; private set; }
@@ -11,6 +16,7 @@ public class GameInput : MonoBehaviour
 
     public event EventHandler OnPlayerAttack;
     public event EventHandler OnPlayerStopAttack;
+    public event EventHandler<WeaponSlotEventArgs> OnWeaponSlotChanged;
 
     [SerializeField] private Camera _camera;
 
@@ -29,18 +35,26 @@ public class GameInput : MonoBehaviour
         // _playerInputActions.Combat.Attack.started += PlayerAttack_started;
         _playerInputActions.Combat.Attack.performed += PlayerAttack_started;
         _playerInputActions.Combat.Attack.canceled += PlayerAttack_canceled;
+
+        _playerInputActions.Hotkeys.Keyboard.performed += Hotkeys_performed;
+    }
+
+    private void Hotkeys_performed(InputAction.CallbackContext obj)
+    {
+        float value = obj.ReadValue<float>();
+        int slot = Mathf.RoundToInt(value);
+        OnWeaponSlotChanged?.Invoke(this, new WeaponSlotEventArgs { SlotIndex = slot });
     }
 
     private void PlayerAttack_started(InputAction.CallbackContext obj)
     {
-        Debug.Log("Player attack INVOKED");
         OnPlayerAttack?.Invoke(this, EventArgs.Empty);
     }
     private void PlayerAttack_canceled(InputAction.CallbackContext obj)
     {
-        Debug.Log("Player attack STOPPED");
         OnPlayerStopAttack?.Invoke(this, EventArgs.Empty);
     }
+
     public Vector2 GetMovementVector()
     {
         Vector2 movementVector = _playerInputActions.Player.Move.ReadValue<Vector2>();

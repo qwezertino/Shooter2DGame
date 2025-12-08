@@ -203,56 +203,6 @@ PolygonCollider2D:
       - {x: 15.744066, y: -9.052542}
       - {x: 15.58987, y: -0.3530011}
   m_UseDelaunayMesh: 0
---- !u!1 &21769354
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 21769356}
-  - component: {fileID: 21769355}
-  m_Layer: 0
-  m_Name: FOVDebugger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &21769355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21769354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d408ba24ad51ed5458db2e3b9a503f15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FOVDebugger
-  showDebugInfo: 1
-  drawLinesToVisibleObjects: 1
-  drawLinesToHiddenObjects: 1
-  visibleLineColor: {r: 0, g: 1, b: 0, a: 1}
-  hiddenLineColor: {r: 1, g: 0, b: 0, a: 1}
-  playerFOVAgent: {fileID: 0}
---- !u!4 &21769356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21769354}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05396, y: -0.49471, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278479139
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +417,7 @@ GameObject:
   - component: {fileID: 681951714}
   - component: {fileID: 681951713}
   - component: {fileID: 681951717}
+  - component: {fileID: 681951718}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -609,7 +560,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 2
+  UpdateMethod: 1
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -624,6 +575,30 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &681951718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681951712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 16
+  m_RefResolutionX: 320
+  m_RefResolutionY: 180
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &807435325
 GameObject:
   m_ObjectHideFlags: 0
@@ -4105,113 +4080,6 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!1 &865470258
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 865470260}
-  - component: {fileID: 865470259}
-  - component: {fileID: 865470261}
-  m_Layer: 0
-  m_Name: FOV Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &865470259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865470258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b7f514248fb86d4292adf0c6dd0edf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FOVMapping.FOVManager
-  FOWTextureSize: 2048
-  FOWColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.7}
-  maxFriendlyAgentCount: 128
-  maxEnemyAgentCount: 128
-  updateInterval: 0.02
-  blockOffset: 1
-  sigma: 30
-  blurIterationCount: 1
-  FOVMapArray: {fileID: 18700000, guid: cd2d634fa39fe6543abff5a843de4195, type: 2}
-  FOVShader: {fileID: 4800000, guid: 64b2dd5a6890e0542aaf8f20be5c10d6, type: 3}
-  FOWProjectorShader: {fileID: 4800000, guid: 83af9ca698329f4498fb77b0a480c8de, type: 3}
-  GaussianShader: {fileID: 4800000, guid: 4b982b63283618741b6074fb7d8e4d37, type: 3}
-  pixelReader: {fileID: 7200000, guid: 7d6282cc36e40724b8bac6618b5f663d, type: 3}
---- !u!4 &865470260
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865470258}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05396, y: -0.49471, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &865470261
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865470258}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1001176381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,10 +5234,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1991726475426101704, guid: 6be3e0ba09297b94cb0db2d35501cc84, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2098361940}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be3e0ba09297b94cb0db2d35501cc84, type: 3}
 --- !u!1 &1335525675
 GameObject:
@@ -5416,31 +5281,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1498664451 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7090013486263316068, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
-  m_PrefabInstance: {fileID: 5964861683688719779}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1498664454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498664451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28967c16912a4b746b2caf14447d8e02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FOVMapping.FOVAgent2D
-  _contributeToFOV: 1
-  _sightRange: 7
-  _sightAngle: 30
-  _disappearInFOW: 0
-  _disappearAlphaThreshold: 0.1
-  _isDynamic: 1
-  _visibleTint: {r: 1, g: 1, b: 1, a: 1}
-  _hiddenTint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
 --- !u!1 &1560596899
 GameObject:
   m_ObjectHideFlags: 0
@@ -5594,31 +5434,6 @@ Transform:
   - {fileID: 1001176382}
   m_Father: {fileID: 661218660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2098361934 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1991726475426101704, guid: 6be3e0ba09297b94cb0db2d35501cc84, type: 3}
-  m_PrefabInstance: {fileID: 1332814343}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2098361940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098361934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28967c16912a4b746b2caf14447d8e02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FOVMapping.FOVAgent2D
-  _contributeToFOV: 0
-  _sightRange: 50
-  _sightAngle: 240
-  _disappearInFOW: 1
-  _disappearAlphaThreshold: 0.1
-  _isDynamic: 1
-  _visibleTint: {r: 1, g: 1, b: 1, a: 1}
-  _hiddenTint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
 --- !u!1 &2142511337
 GameObject:
   m_ObjectHideFlags: 0
@@ -5666,7 +5481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoundingShape2D: {fileID: 794592}
-  Damping: 0.5
+  Damping: 0.1
   SlowingDistance: 0
   OversizeWindow:
     Enabled: 0
@@ -5731,7 +5546,7 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: -0.0000003427267, y: 0.000000070780516}
+    ScreenPosition: {x: 0, y: 0}
     DeadZone:
       Enabled: 1
       Size: {x: 0.056250304, y: 0.09259238}
@@ -5817,13 +5632,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 635517697452813993, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
+    - target: {fileID: 1810141786095284, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1262766277440826355, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2578911716678388877, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5865,25 +5676,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3251130376265162745, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 3323266591774494805, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6994560807089788519, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8169504880468445915, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7090013486263316068, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1498664454}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47b13fbecad9d994ca06a802f9f87931, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -5892,8 +5696,6 @@ SceneRoots:
   - {fileID: 807435326}
   - {fileID: 278479141}
   - {fileID: 475062181}
-  - {fileID: 865470260}
-  - {fileID: 21769356}
   - {fileID: 661218660}
   - {fileID: 1335525677}
   - {fileID: 5964861683688719779}
