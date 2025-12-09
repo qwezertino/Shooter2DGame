@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62ea73bb5ed56143aaf6284ee389c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponData: {fileID: 11400000, guid: 32b2e4f16057c54408d33a1e2cf34d68, type: 2}
+  _weaponData: {fileID: 11400000, guid: 62387e60b06d9a24886ebdd691f7099b, type: 2}
   _firePoint: {fileID: 6995561177934200404}
   _lineRenderer: {fileID: 2860086971873081416}
   _muzzleFlash: {fileID: 7599980793073708921}

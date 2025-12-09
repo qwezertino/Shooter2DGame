@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3520809743378278745}
   - component: {fileID: 31500635818942761}
   - component: {fileID: 238203694035498222}
+  - component: {fileID: 4279004160130452745}
   m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -127,6 +128,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1568e4a51471c1444b46eac3d48f1b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4279004160130452745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125150691940667026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d022c43a019c4164281d3c1bc13b9e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSortingOrder
+  _orderOffset: 0
+  _updateInterval: 0
+  _positionMultiplier: 100
+  _invertSorting: 0
+  _applyToChildren: 0
+  _isStatic: 0
 --- !u!1 &1262766277440826355
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +241,7 @@ GameObject:
   - component: {fileID: 5073063231536440455}
   - component: {fileID: 6185243550911668245}
   - component: {fileID: 7907982284561585731}
+  - component: {fileID: 2166183062229062665}
   m_Layer: 0
   m_Name: ActiveWeapon
   m_TagString: Untagged
@@ -275,6 +295,24 @@ MonoBehaviour:
   - {fileID: 4154090109559836320}
   - {fileID: 4922883400287135553}
   _startingWeaponIndex: 0
+--- !u!114 &2166183062229062665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798760357083211677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d022c43a019c4164281d3c1bc13b9e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YSortingOrder
+  _orderOffset: 1
+  _updateInterval: 0
+  _positionMultiplier: 100
+  _invertSorting: 0
+  _applyToChildren: 1
+  _isStatic: 0
 --- !u!1 &6851876773913159498
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +371,7 @@ GameObject:
   - component: {fileID: 1842197350454405665}
   - component: {fileID: 7316151247081679882}
   - component: {fileID: 8268424224393606482}
+  - component: {fileID: 7611939400304413558}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -448,6 +487,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movingSpeed: 4
+--- !u!114 &7611939400304413558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6994560807089788519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b073ccc8f0e4cc409b33affd5f43d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerOcclusionDetector
+  _playerTransform: {fileID: 2578911716678388877}
+  _camera: {fileID: 0}
+  _findAllOccludableObjects: 1
+  _checkInterval: 0.1
+  _showDebugRays: 1
 --- !u!1 &7090013486263316068
 GameObject:
   m_ObjectHideFlags: 0
