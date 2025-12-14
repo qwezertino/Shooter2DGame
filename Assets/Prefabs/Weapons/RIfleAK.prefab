@@ -142,6 +142,9 @@ MonoBehaviour:
   _firePoint: {fileID: 6995561177934200404}
   _lineRenderer: {fileID: 2860086971873081416}
   _muzzleFlash: {fileID: 7599980793073708921}
+  _hitLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &3112186587912235342
 GameObject:
   m_ObjectHideFlags: 0

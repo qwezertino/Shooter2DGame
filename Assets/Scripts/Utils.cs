@@ -22,6 +22,35 @@ namespace ActionGame.Utils
             if (n < 0) n += 360;
             return n;
         }
+        public static void RaycastLogHits(RaycastHit2D[] hits, int hitCount, string weaponName = "Weapon")
+        {
+            if (hitCount > 0)
+            {
+                Debug.Log($"<color=yellow>[{weaponName}] Raycast обнаружил {hitCount} попадани(й/я):</color>");
+                for (int i = 0; i < hitCount; i++)
+                {
+                    string layerName = LayerMask.LayerToName(hits[i].collider.gameObject.layer);
+                    string triggerInfo = hits[i].collider.isTrigger ? "<color=red>TRIGGER</color>" : "<color=green>SOLID</color>";
+                    Debug.Log($"  #{i + 1}: <b>{hits[i].collider.gameObject.name}</b> | Layer: {layerName} | {triggerInfo} | Distance: {hits[i].distance:F2}");
+                }
+            }
+        }
+        public static void RaycastDrawLine(Vector3 origin, Vector3 direction, float distance, bool hasHit, Vector3 hitPoint)
+        {
+            Color color = hasHit ? Color.red : Color.green;
+            Vector3 endPoint = hasHit ? hitPoint : origin + direction * distance;
+
+            Debug.DrawLine(origin, endPoint, color, 0.5f);
+
+            if (hasHit)
+            {
+                // Рисуем крестик в точке попадания
+                Vector3 perpendicular = Vector3.Cross(direction, Vector3.forward).normalized * 0.2f;
+                Debug.DrawLine(hitPoint - perpendicular, hitPoint + perpendicular, Color.yellow, 0.5f);
+                Debug.DrawLine(hitPoint - Vector3.up * 0.2f, hitPoint + Vector3.up * 0.2f, Color.yellow, 0.5f);
+            }
+        }
+
         // public static Vector3 GetMouseWorldPosition() {
         //     Vector3 vec = GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
         //     vec.z = 0f;

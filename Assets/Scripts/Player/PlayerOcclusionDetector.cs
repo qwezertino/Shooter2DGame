@@ -153,22 +153,25 @@ public class PlayerOcclusionDetector : MonoBehaviour
         if (spriteRenderer == null || !spriteRenderer.enabled)
             return false;
 
-        // Получаем границы спрайта в мировых координатах
-        Bounds spriteBounds = spriteRenderer.bounds;
+        // Проверяем что объект находится "впереди" игрока (ниже по Y)
+        float objectPivotY = occludableObject.transform.position.y;
+        if (objectPivotY >= playerPos.y)
+            return false;
 
-        // Проверяем что игрок находится внутри X и Y границ спрайта
+        // Пытаемся использовать PolygonCollider2D для точной проверки
+        PolygonCollider2D polygonCollider = occludableObject.GetComponent<PolygonCollider2D>();
+        if (polygonCollider != null)
+        {
+            // Используем OverlapPoint для точной проверки по контуру спрайта
+            return polygonCollider.OverlapPoint(playerPos);
+        }
+
+        // Fallback: если нет PolygonCollider2D, используем стандартный Bounds
+        Bounds spriteBounds = spriteRenderer.bounds;
         bool isInsideX = playerPos.x >= spriteBounds.min.x && playerPos.x <= spriteBounds.max.x;
         bool isInsideY = playerPos.y >= spriteBounds.min.y && playerPos.y <= spriteBounds.max.y;
 
-        if (!isInsideX || !isInsideY)
-            return false;
-
-        // Проверяем что объект находится "впереди" игрока (ниже по Y)
-        // Пивот дерева внизу, листва вверху
-        // Если пивот (transform.position.y) меньше позиции игрока - значит игрок ЗА деревом
-        float objectPivotY = occludableObject.transform.position.y;
-
-        return objectPivotY < playerPos.y;
+        return isInsideX && isInsideY;
     }
 
     private void OnDrawGizmosSelected()
