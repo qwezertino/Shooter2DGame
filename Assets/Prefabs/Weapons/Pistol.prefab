@@ -145,6 +145,7 @@ MonoBehaviour:
   _hitLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  _debug: 0
 --- !u!1 &3112186587912235342
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9128b3c0f85c04fa55a5d4b23b4b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pistol: {fileID: 3485330627546212236}
+  _weapon: {fileID: 3485330627546212236}
 --- !u!95 &1860906774360946701
 Animator:
   serializedVersion: 7
