@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5527292880645217933}
   - component: {fileID: 682000141365846273}
   - component: {fileID: 5615718605434925612}
+  - component: {fileID: 9212357990016347205}
   m_Layer: 2
   m_Name: Tree_1
   m_TagString: Untagged
@@ -269,3 +270,56 @@ MonoBehaviour:
   _invertSorting: 0
   _applyToChildren: 1
   _isStatic: 1
+--- !u!114 &9212357990016347205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759502612434382656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.ShadowCaster2D
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000294a8bd4ad4d84196592f25e47c17844dd21ecb5a1ed5c8e3544919e
+  m_ShapePath:
+  - {x: -2.6762877, y: -0.395298, z: 0}
+  - {x: -2.6762877, y: 5.729702, z: 0}
+  - {x: 2.7612119, y: 5.729702, z: 0}
+  - {x: 2.7612119, y: -0.395298, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 5645570129840226478}
+  m_ShadowShape2DProvider:
+    rid: 6477807301769298055
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.07722473, y: -0.059677124, z: 0}
+      m_Extent: {x: 0.55155945, y: 0.014923096, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.2
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0.2
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 5645570129840226478}
+  references:
+    version: 2
+    RefIds:
+    - rid: 6477807301769298055
+      type: {class: ShadowShape2DProvider_Collider2D, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 

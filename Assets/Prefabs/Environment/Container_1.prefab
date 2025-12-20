@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 1688019063099893904}
   - component: {fileID: 314948323969847609}
   - component: {fileID: 4366936741753611043}
-  m_Layer: 0
+  - component: {fileID: 4729497110841048883}
+  m_Layer: 6
   m_Name: Container_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,3 +243,56 @@ PolygonCollider2D:
       - {x: 1.53125, y: -1.15625}
       - {x: 1.53125, y: 1.46875}
   m_UseDelaunayMesh: 1
+--- !u!114 &4729497110841048883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590101496883922662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.ShadowCaster2D
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000294a8bd4ad4d84196592f25e47c17844dd21ecb5a1ed5c8e3544919e
+  m_ShapePath:
+  - {x: -1.53125, y: -1.46875, z: 0}
+  - {x: -1.53125, y: 1.46875, z: 0}
+  - {x: 1.53125, y: 1.46875, z: 0}
+  - {x: 1.53125, y: -1.46875, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 4535570289147877269}
+  m_ShadowShape2DProvider:
+    rid: 6477807301769298058
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.008460999, y: -0.13445282, z: 0}
+      m_Extent: {x: 1.4010086, y: 0.7546768, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.09
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0.09
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 4535570289147877269}
+  references:
+    version: 2
+    RefIds:
+    - rid: 6477807301769298058
+      type: {class: ShadowShape2DProvider_Collider2D, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 
