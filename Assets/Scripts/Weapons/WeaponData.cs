@@ -17,6 +17,16 @@ public class WeaponData : ScriptableObject
     // public Sprite weaponSprite;
     public float muzzleFlashDuration = 0.02f;
 
+    [Header("Spread Settings")]
+    [Tooltip("Minimum spread in degrees")]
+    public float minSpread = 0f;
+    [Tooltip("Spread increase per shot in degrees")]
+    public float spreadIncreasePerShot = 2f;
+    [Tooltip("Maximum spread in degrees")]
+    public float maxSpread = 10f;
+    [Tooltip("Accuracy recovery rate (degrees per second)")]
+    public float spreadRecoveryRate = 5f;
+
     // [Header("Sounds")]
     // public AudioClip shootSound;
     // public AudioClip reloadSound;

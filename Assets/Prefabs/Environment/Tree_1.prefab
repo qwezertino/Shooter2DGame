@@ -306,14 +306,14 @@ MonoBehaviour:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
       m_Center: {x: 0.07722473, y: -0.059677124, z: 0}
-      m_Extent: {x: 0.55155945, y: 0.014923096, z: 0}
+      m_Extent: {x: 0.6515503, y: 0.11491394, z: 0}
     m_EdgeProcessing: 1
-    m_TrimEdge: 0.2
+    m_TrimEdge: 0.1
     m_FlipX: 0
     m_FlipY: 0
     m_InitialTrim: 0
   m_CastingOption: 1
-  m_PreviousTrimEdge: 0.2
+  m_PreviousTrimEdge: 0.1
   m_PreviousEdgeProcessing: 1
   m_PreviousShadowCastingSource: 2
   m_PreviousShadowShape2DSource: {fileID: 5645570129840226478}

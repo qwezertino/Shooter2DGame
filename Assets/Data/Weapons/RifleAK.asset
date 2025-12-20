@@ -18,3 +18,7 @@ MonoBehaviour:
   damage: 25
   range: 100
   muzzleFlashDuration: 0.02
+  minSpread: 0
+  spreadIncreasePerShot: 2
+  maxSpread: 10
+  spreadRecoveryRate: 6

@@ -131,7 +131,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.008462191, y: -0.13444671}
+  m_Offset: {x: 0.008462191, y: -0.100210786}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -141,7 +141,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.9820228, y: 1.689363}
+  m_Size: {x: 2.9820228, y: 1.6208911}
   m_EdgeRadius: 0
 --- !u!114 &8282311529437184557
 MonoBehaviour:
@@ -278,15 +278,15 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 0.008460999, y: -0.13445282, z: 0}
-      m_Extent: {x: 1.4010086, y: 0.7546768, z: 0}
+      m_Center: {x: 0.008460999, y: -0.1002121, z: 0}
+      m_Extent: {x: 1.3909988, y: 0.71042633, z: 0}
     m_EdgeProcessing: 1
-    m_TrimEdge: 0.09
+    m_TrimEdge: 0.1
     m_FlipX: 0
     m_FlipY: 0
     m_InitialTrim: 0
   m_CastingOption: 1
-  m_PreviousTrimEdge: 0.09
+  m_PreviousTrimEdge: 0.1
   m_PreviousEdgeProcessing: 1
   m_PreviousShadowCastingSource: 2
   m_PreviousShadowShape2DSource: {fileID: 4535570289147877269}

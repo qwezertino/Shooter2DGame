@@ -156,7 +156,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7035741901684862104}
   - component: {fileID: 3251130376265162745}
-  - component: {fileID: 5822213988500481250}
   m_Layer: 0
   m_Name: Point Spot Light
   m_TagString: Untagged
@@ -173,7 +172,7 @@ Transform:
   m_GameObject: {fileID: 1262766277440826355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.45, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,7 +195,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.083
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 0.28
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 6592f25e47c17844dd21ecb5a1ed5c8e3544919ead4d8419294a8bd400000000
@@ -231,34 +230,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &5822213988500481250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262766277440826355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4556b0177821d6543aa8924bec5d0081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FOVDetector
-  _useLightSettings: 1
-  _lightSource: {fileID: 3251130376265162745}
-  _fovOriginPoint: {fileID: 576256886229201829}
-  _fovAngle: 75
-  _viewDistance: 15
-  _dynamicObjectsLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  _fadeSpeed: 10
-  _hiddenAlpha: 0
-  _updateInterval: 0.15
-  _useObstacleDetection: 1
-  _obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  _showDetectionDebug: 1
 --- !u!1 &1798760357083211677
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +313,79 @@ MonoBehaviour:
   _invertSorting: 0
   _applyToChildren: 1
   _isStatic: 0
+--- !u!1 &6409181726363131246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2296329393046281451}
+  - component: {fileID: 5192567548505782062}
+  - component: {fileID: 4798311938137760595}
+  m_Layer: 0
+  m_Name: FOVRotationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2296329393046281451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409181726363131246}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.081, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2578911716678388877}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5192567548505782062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409181726363131246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ca459de4dcfc7919a47b4a45e69e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4798311938137760595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409181726363131246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4556b0177821d6543aa8924bec5d0081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FOVDetector
+  _useLightSettings: 1
+  _lightSource: {fileID: 3251130376265162745}
+  _fovOriginPoint: {fileID: 2296329393046281451}
+  _fovAngle: 75
+  _viewDistance: 15
+  _dynamicObjectsLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _fadeSpeed: 10
+  _hiddenAlpha: 0
+  _updateInterval: 0.15
+  _useObstacleDetection: 1
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _showDetectionDebug: 0
 --- !u!1 &6851876773913159498
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +469,7 @@ Transform:
   - {fileID: 5073063231536440455}
   - {fileID: 4972796483558115989}
   - {fileID: 576256886229201829}
+  - {fileID: 2296329393046281451}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &546981054213029157
@@ -606,7 +651,7 @@ Transform:
   m_GameObject: {fileID: 8169504880468445915}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.466, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

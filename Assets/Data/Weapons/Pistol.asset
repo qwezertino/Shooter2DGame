@@ -17,7 +17,8 @@ MonoBehaviour:
   fireMode: 0
   damage: 10
   range: 100
-  weaponSprite: {fileID: -195925265, guid: 507c92ede3294cc468e793a13eedc7a1, type: 3}
   muzzleFlashDuration: 0.02
-  shootSound: {fileID: 0}
-  reloadSound: {fileID: 0}
+  minSpread: 0
+  spreadIncreasePerShot: 2
+  maxSpread: 10
+  spreadRecoveryRate: 4

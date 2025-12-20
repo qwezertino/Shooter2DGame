@@ -163,10 +163,10 @@ public class FOVDetector : MonoBehaviour
 
         // Debug every 60 frames (~1 sec)
         _debugFrameCounter++;
-        // if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
-        // {
-        //     Debug.Log($"[FOVDetector] Detected {colliders.Length} colliders on layer. Position: {_fovOriginPoint.position}, Direction: {_lookDirection}");
-        // }
+        if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
+        {
+            Debug.Log($"[FOVDetector] Detected {colliders.Length} colliders on layer. Position: {_fovOriginPoint.position}, Direction: {_lookDirection}");
+        }
 
         foreach (Collider2D collider in colliders)
         {
@@ -184,31 +184,31 @@ public class FOVDetector : MonoBehaviour
                     if (!Utils.IsBlockedByObstacle(_fovOriginPoint.position, targetObj.transform.position, _obstacleLayer))
                     {
                         currentlyVisible.Add(targetObj);
-                        // if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
-                        // {
-                        //     Debug.Log($"[FOVDetector] Object {targetObj.name} VISIBLE (no obstacles)");
-                        // }
+                        if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
+                        {
+                            Debug.Log($"[FOVDetector] Object {targetObj.name} VISIBLE (no obstacles)");
+                        }
                     }
-                    // else if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
-                    // {
-                    //     Debug.Log($"[FOVDetector] Object {targetObj.name} blocked by obstacle");
-                    // }
+                    else if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
+                    {
+                        Debug.Log($"[FOVDetector] Object {targetObj.name} blocked by obstacle");
+                    }
                 }
                 else
                 {
                     currentlyVisible.Add(targetObj);
-                    // if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
-                    // {
-                    //     Debug.Log($"[FOVDetector] Object {targetObj.name} VISIBLE");
-                    // }
+                    if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
+                    {
+                        Debug.Log($"[FOVDetector] Object {targetObj.name} VISIBLE");
+                    }
                 }
             }
-            // else if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
-            // {
-            //     Vector3 dirToTarget = (targetObj.transform.position - _fovOriginPoint.position).normalized;
-            //     float angle = Vector3.Angle(_lookDirection, dirToTarget);
-            //     Debug.Log($"[FOVDetector] Object {targetObj.name} outside FOV (angle: {angle:F1}°)");
-            // }
+            else if (_showDetectionDebug && _debugFrameCounter % 60 == 0)
+            {
+                Vector3 dirToTarget = (targetObj.transform.position - _fovOriginPoint.position).normalized;
+                float angle = Vector3.Angle(_lookDirection, dirToTarget);
+                Debug.Log($"[FOVDetector] Object {targetObj.name} outside FOV (angle: {angle:F1}°)");
+            }
         }
 
         // Update objects visibility
