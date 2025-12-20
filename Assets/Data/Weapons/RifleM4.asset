@@ -21,4 +21,4 @@ MonoBehaviour:
   minSpread: 0
   spreadIncreasePerShot: 2
   maxSpread: 10
-  spreadRecoveryRate: 8
+  spreadRecoveryRate: 10
